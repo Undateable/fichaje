@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Silicon-Aid: Fucsia'),
 
@@ -79,10 +79,18 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Image.asset('images/siliconname.jpg'),
+        title: Image.asset('images/siliconname.png'),
 
       ),
-      body: Center(
+
+      body: Container(
+        height: 3480,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("images/siliconbackground.png"),
+              fit: BoxFit.cover),
+        ),
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
