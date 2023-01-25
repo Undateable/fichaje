@@ -73,6 +73,80 @@ appBar: AppBar(
     onPressed: _add,
   )
 ),
+
+Practica Columna
+body:SizedBox(
+          width: double.infinity, //Para que la columna se ponga realmente en la esquina de la pantalla
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly, //start, center, end, spacearound,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              Container(
+                  color: Colors.orange,
+                  height: 100,
+                  width:100
+              ),
+              Text("Ola"),
+              Image.network(
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNo4MiEeqFZL2avP-NNymFLiqbXXnxmWc5PlIz0Hm4d63dTlaNt6pb1uKZBydAR81zD3g&usqp=CAU",
+              ),
+            ],
+          ),
+      ),
+      ),
+
+Filas
+        body: Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Expanded(child: Text("Activar Sonido")),
+                Icon(Icons.android),
+                Switch(
+                  value: true,
+                  onChanged: (value){},
+                ),
+              ],
+            ),
+            Divider(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text("Activar Sonido"),
+                Icon(Icons.android),
+                Switch(
+                  value: true,
+                  onChanged: (value){},
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Container(
+                  height: 50,
+                  width: 50,
+                  color: Colors.black,
+                ),
+                Container(
+                  height: 50,
+                  width: 50,
+                  color: Colors.orange,
+                ),
+                Container(
+                  height: 50,
+                  width: 50,
+                  color: Colors.black,
+                ),
+                Container(
+                  height: 50,
+                  width: 50,
+                  color: Colors.orange,
+                ),
+              ],
+
+            )
+          ],
+        )
  */
 
 import 'package:flutter/material.dart';
@@ -87,19 +161,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       home: Scaffold(
-        body: Column(
-          children: <Widget>[
-            Container(
-                color: Colors.orange,
-                height: 100,
-                width:100
-            ),
-            Text("Ola"),
-            Image.network(
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNo4MiEeqFZL2avP-NNymFLiqbXXnxmWc5PlIz0Hm4d63dTlaNt6pb1uKZBydAR81zD3g&usqp=CAU",
-            ),
-          ],
-        ),
+
       ),
     );
   }
