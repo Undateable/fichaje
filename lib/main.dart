@@ -36,31 +36,8 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
-class Change extends StatefulWidget{
-  const Change({
-    Key key,
-    this.color = const Color(0xFFFFE306),
-  }) : super(key: key);
-  final Color color;
 
-  _ChangeState createState() => _ChangeState();
-}
 
-class _ChangeState extends State<Change>{
-  double size =1.0;
-  void grow(){
-    setState(() {
-      size += 0.1;
-    });
-  }
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: widget.color,
-      transform: Matrix4.diagonal3Values(size, size, 1.0),
-    );
-  }
-}
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
@@ -125,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20, color: Colors.white,backgroundColor: Colors.black),
             ),
             Text(
               '$_counter',
@@ -141,4 +118,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
 }
+
