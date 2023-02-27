@@ -149,6 +149,7 @@ Filas
         )
  */
 
+import 'package:fichaje/main.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -160,13 +161,40 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: Scaffold(
-
-      ),
+      home: MyHomePage(),
     );
   }
+}
+
+  class MyHomePage extends StatelessWidget{
+    MyHomePage({super.key});
+
+    List<String> names = ["Mario", "Juan", "Marta"];
+    @override
+    Widget build(BuildContext context){
+      return Scaffold(
+        appBar: AppBar(
+          title: Text("List View"),
+        ),
+        body: ListView.builder(
+          itemCount: names.length,
+          itemBuilder: (BuildContext context, int index) {
+            final name = names[index];
+            return ListTile(
+              title: Text(name),
+              leading: Icon(Icons.person),
+              onTap: (){
+                print(name);
+              },
+            );
+          },
+        ),
+
+      );
+    }
+  }
+
   void _add() {
     print("hola");
   }
-}
 
